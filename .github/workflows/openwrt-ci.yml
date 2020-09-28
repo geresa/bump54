@@ -49,7 +49,7 @@ jobs:
           ./scripts/feeds update -a
       - name: Update package
         run: |
-          curl -fsSL https://git.io/JUgLH | sh
+          # curl -fsSL https://git.io/JUgLH | sh
           ./scripts/feeds install -a
       - name: Generate configuration file
         run: |
