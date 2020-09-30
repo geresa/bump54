@@ -50,6 +50,7 @@ jobs:
       - name: Update package
         run: |
           curl -fsSL https://git.io/JUgLH | sh
+          chmod -R 755 ./
           ./scripts/feeds install -a
       - name: Generate configuration file
         run: |
