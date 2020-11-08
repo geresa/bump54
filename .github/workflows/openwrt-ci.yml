@@ -46,7 +46,7 @@ jobs:
         run: |
           sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
           sed -i 's/coolsnowwolf/sirpdboy/g' ./feeds.conf.default
-          sed -i '$a src-git diy https://github.com/sirpdboy/sirpdboy-package.git' feeds.conf.default
+          git clone https://github.com/sirpdboy/sirpdboy-package package/diy
           ./scripts/feeds update -a
       - name: Update package
         run: |
