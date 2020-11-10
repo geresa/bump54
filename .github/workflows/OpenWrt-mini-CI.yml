@@ -51,7 +51,7 @@ jobs:
       - name: Update package
         run: |
           curl -fsSL https://git.io/JUgLD | sh
-          chmod -R 755 ./
+          chmod -R 755 ./package/diy
           ./scripts/feeds install -a
       - name: Generate configuration file
         run: |
