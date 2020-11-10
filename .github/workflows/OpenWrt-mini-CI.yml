@@ -52,7 +52,7 @@ jobs:
         run: |
           curl -fsSL https://git.io/JUgLD | sh
           ./scripts/feeds install -a
-          chmod -R 755 ./package/diy
+          chmod -R 775 .
       - name: Generate configuration file
         run: |
           curl -fsSL https://git.io/JUgLS > .config
