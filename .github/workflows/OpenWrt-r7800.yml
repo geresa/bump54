@@ -48,7 +48,7 @@ jobs:
           ./scripts/feeds update -a
       - name: Update package
         run: |
-          curl -fsSL https://git.io/JUgLD | sh
+          curl -fsSL https://raw.githubusercontent.com/siropboy/other/master/patch/script/pkmini.sh | sh
           ./scripts/feeds install -a
           chmod -R 775 .
       - name: Generate configuration file
