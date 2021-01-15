@@ -1,4 +1,4 @@
-name: OpenWrt-x750-CI
+name: OpenWrt-e750-CI
 
 on:
   repository_dispatch:
@@ -15,7 +15,7 @@ jobs:
 
   build_openwrt:
 
-    name: OpenWrt-x750-Build 
+    name: OpenWrt-e750-Build 
 
     runs-on: ubuntu-latest
 
@@ -94,12 +94,12 @@ jobs:
       - name: Upload Firmware
         uses: actions/upload-artifact@main
         with:
-          name: SirpdboyOpenWrt-x750-Firmware
+          name: SirpdboyOpenWrt-e750-Firmware
           path: ./mini/firmware
       - name: Upload  IPK
         uses: actions/upload-artifact@main
         with:
-          name: SirpdboyOpenWrt-x750-Ipk
+          name: SirpdboyOpenWrt-e750-Ipk
           path: ./mini/package
       - name: Upload firmware to cowtransfer
         run: |
