@@ -75,16 +75,20 @@ jobs:
           mkdir -p ./mini/firmware
           mkdir -p ./mini/package
           cp -rf $(find ./bin/ -type f -name "*.ipk") ./mini/package
-          #find ./bin/targets/ -name "*img*" | xargs -i mv -f {} ./mini/firmware
-          #find ./bin/targets/ -name "*bin*" | xargs -i mv -f {} ./mini/firmware
-          #find ./bin/targets/ -name "*chk*" | xargs -i mv -f {} ./mini/firmware
-          find ./bin/targets/*/*/ -maxdepth 1 \
-          -name "*combined*" \
-          -or -name "*sysupgrade*" \
-          -or -name "*squashfs*" \
-          -or -name "bin" \
-          -or -name "img" \
-          | xargs -i mv -f {} ./mini/firmware
+          #find  ./lede/bin/targets/ -type d -name "packages" | xargs rm -rf {}
+          #cd  lede/bin/targets/*/*
+          find ./bin/targets/ -name "*img*" | xargs -i mv -f {} ./mini/firmware
+          find ./bin/targets/ -name "*bin*" | xargs -i mv -f {} ./mini/firmware
+          find ./bin/targets/ -name "*sysupgrade*" | xargs -i mv -f {} ./mini/firmware
+          find ./bin/targets/ -name "*config*" | xargs -i mv -f {} ./mini/firmware
+          find ./bin/targets/ -name "*squashfs*" | xargs -i mv -f {} ./mini/firmware
+          #find ./bin/targets/*/*/ -maxdepth 1 \
+          #-name "*combined*" \
+          #-or -name "*sysupgrade*" \
+          #-or -name "*squashfs*" \
+          #-or -name "bin" \
+          #-or -name "img" \
+          #| xargs -i mv -f {} ./mini/firmware
           cd ./mini/firmware
           gzip *.*
       - name: Upload Firmware
