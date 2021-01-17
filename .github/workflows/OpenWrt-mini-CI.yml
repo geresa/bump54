@@ -56,7 +56,6 @@ jobs:
           chmod -R 775 .
       - name: Generate configuration file
         run: |
-          curl -fsSL https://git.io/JUgLS > .config
           make defconfig
       - name: Make download
         run: |
