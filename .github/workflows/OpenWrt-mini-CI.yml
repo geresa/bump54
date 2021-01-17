@@ -45,11 +45,14 @@ jobs:
           sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
           #sed -i 's/coolsnowwolf/sirpdboy/g' ./feeds.conf.default
           git clone https://github.com/sirpdboy/sirpdboy-package package/diy
+          git clone https://github.com/mchome/openwrt-dogcom package/feeds/packages/dogcom
+          git clone https://github.com/mchome/luci-app-dogcom package/feeds/luci/luci-app-dogcom
           ./scripts/feeds update -a
       - name: Update package
         run: |
           curl -fsSL https://git.io/JUgLD | sh
           ./scripts/feeds install -a
+          git clone https://github.com/jerrykuku/luci-theme-argon package/lean/luci-theme-argon
           chmod -R 775 .
       - name: Generate configuration file
         run: |
